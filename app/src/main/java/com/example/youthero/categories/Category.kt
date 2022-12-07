@@ -62,6 +62,8 @@ fun CategoryItem(categoryItem: Category) {//Cell == Big column
     }
 }
 
+//GG
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MenuCategories(listCategories: List<Category>) {
