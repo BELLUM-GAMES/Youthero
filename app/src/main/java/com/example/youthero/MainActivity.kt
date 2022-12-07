@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MenuItem(itemDescription: String, @DrawableRes itemImage: Int){
     Image(
-        painter = painterResource(R.drawable.cultura),
+        painter = painterResource(itemImage),
         contentDescription = null,
         /*
         modifier = Modifier
