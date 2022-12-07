@@ -3,12 +3,11 @@ package com.example.youthero
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.Image
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.youthero.ui.theme.YoutheroTheme
 
@@ -17,27 +16,36 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             YoutheroTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+                //Actual app and not preview
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun MenuItem(itemDescription: String, @DrawableRes itemImage: Int){
+    Image(
+        painter = painterResource(R.drawable.cultura),
+        contentDescription = null,
+        /*
+        modifier = Modifier
+            .size(40.dp)
+            .clip(CircleShape)
+            .border(1.5.dp, MaterialTheme.colors.secondaryVariant, CircleShape)*/
+    )
+    Text(itemDescription)
 }
 
-@Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun Menu() {
+    MenuItem(itemDescription = "Educatie", itemImage = R.drawable.educatie)
+}
+
+@Preview
+@Composable
+fun Preview()
+{
     YoutheroTheme {
-        Greeting("Android")
+        Menu()
     }
 }
