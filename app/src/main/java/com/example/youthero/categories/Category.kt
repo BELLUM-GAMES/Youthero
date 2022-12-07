@@ -4,12 +4,11 @@ import android.content.res.Configuration
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
@@ -25,17 +24,14 @@ import com.example.youthero.R
 import com.example.youthero.ui.theme.YoutheroTheme
 
 data class Category(val categoryTitle: String, @DrawableRes val categoryImageID: Int)
-
-//pt txt wrap content
 //scroll state apartine lazycolumn
-//rounded corners
 
 @Composable
 fun CategoryItem(categoryItem: Category) {//Cell == Big column
     Column(
         modifier = Modifier
-            .padding(all = 16.dp)
-            .clip(shape = RoundedCornerShape(10.dp))
+            .padding(start = 16.dp, top = 8.dp, end = 10.5.dp, bottom = 8.dp)
+            .clip(shape = RoundedCornerShape(20.dp))
             .background(Color.White)
             .shadow(
                 elevation = 6.dp,
@@ -44,7 +40,7 @@ fun CategoryItem(categoryItem: Category) {//Cell == Big column
                 ambientColor = Color.White,
                 spotColor = Color(0x001E1E1E)
             )
-    ){
+    ) {
         Image(
             painter = painterResource(categoryItem.categoryImageID),
             contentDescription = null,
@@ -66,19 +62,17 @@ fun CategoryItem(categoryItem: Category) {//Cell == Big column
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MenuCategories(listCategories: List<Category>) {
-    LazyColumn(modifier = Modifier
-        .background(Color(0x001E1E1E))
-        //.verticalScroll(rememberScrollState())
-    ) {
-        listCategories.map { item { CategoryItem(it) } }
-    }
-}
-
-@Composable
-fun MenuCategoriesGrid(listCategories: List<Category>) {
-    //LazyVerticalGrid(cells = , content = )
+    LazyVerticalGrid(
+        modifier = Modifier
+            .background(Color(0x001E1E1E)),
+        cells = GridCells.Fixed(2),
+        content = {
+            listCategories.map { item { CategoryItem(it) } }
+        }
+    )
 }
 
 @Preview(
