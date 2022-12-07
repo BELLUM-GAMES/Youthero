@@ -26,19 +26,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MenuItem(itemDescription: String, @DrawableRes itemImage: Int){
+fun MenuItem(itemTitle: String, @DrawableRes itemImageID: Int){
     Column {
         Image(
-            painter = painterResource(itemImage),
+            painter = painterResource(itemImageID),
             contentDescription = null,
-            /*
-            modifier = Modifier
-                .size(40.dp)
-                .clip(CircleShape)
-                .border(1.5.dp, MaterialTheme.colors.secondaryVariant, CircleShape)*/
         )
         Column {
-            Text(itemDescription)
+            Text(itemTitle)
         }
     }
 }
@@ -48,34 +43,34 @@ fun MenuWithoutLazy() {
     Column {
         Row{
             Column {
-                MenuItem(itemDescription = "Educatie", itemImage = R.drawable.educatie)
+                MenuItem(itemTitle = "Educatie", itemImageID = R.drawable.educatie)
             }
             Column {
-                MenuItem(itemDescription = "Cultura", itemImage = R.drawable.cultura)
-            }
-        }
-        Row{
-            Column {
-                MenuItem(itemDescription = "Ocupatie", itemImage = R.drawable.ocupatie)
-            }
-            Column {
-                MenuItem(itemDescription = "Mediu inconjurator", itemImage = R.drawable.mediu_inconjurator)
+                MenuItem(itemTitle = "Cultura", itemImageID = R.drawable.cultura)
             }
         }
         Row{
             Column {
-                MenuItem(itemDescription = "Viata sanatoasa", itemImage = R.drawable.viata_sanatoasa)
+                MenuItem(itemTitle = "Ocupatie", itemImageID = R.drawable.ocupatie)
             }
             Column {
-                MenuItem(itemDescription = "Drepturile Tinerilor", itemImage = R.drawable.drepturi_tineri)
+                MenuItem(itemTitle = "Mediu inconjurator", itemImageID = R.drawable.mediu_inconjurator)
             }
         }
         Row{
             Column {
-                MenuItem(itemDescription = "Participare", itemImage = R.drawable.participare)
+                MenuItem(itemTitle = "Viata sanatoasa", itemImageID = R.drawable.viata_sanatoasa)
             }
             Column {
-                MenuItem(itemDescription = "Spatii pentru tineri", itemImage = R.drawable.spatii_tineri)
+                MenuItem(itemTitle = "Drepturile Tinerilor", itemImageID = R.drawable.drepturi_tineri)
+            }
+        }
+        Row{
+            Column {
+                MenuItem(itemTitle = "Participare", itemImageID = R.drawable.participare)
+            }
+            Column {
+                MenuItem(itemTitle = "Spatii pentru tineri", itemImageID = R.drawable.spatii_tineri)
             }
         }
     }
