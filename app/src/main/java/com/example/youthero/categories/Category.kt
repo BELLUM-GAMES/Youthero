@@ -50,7 +50,6 @@ fun MenuCategories(listCategories: List<Category>) {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun LazyVerticalGridDemo(listCategories: List<Category>){
-
 }
 
 @Preview(
