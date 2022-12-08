@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -25,6 +27,9 @@ data class Category(val categoryTitle: String, @DrawableRes val categoryImageID:
 fun CategoryItem(categoryItem: Category) {//Cell == Big column
     Column(
         modifier = Modifier
+            .clickable{
+                //onClick
+            }
             .padding(start = 16.dp, top = 8.dp, end = 10.5.dp, bottom = 8.dp)
             .clip(shape = RoundedCornerShape(20.dp))
             .background(Color.White)
@@ -69,3 +74,7 @@ fun MenuCategories(listCategories: List<Category>) {
         }
     )
 }
+
+/*
+
+*/

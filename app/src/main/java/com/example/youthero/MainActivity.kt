@@ -6,6 +6,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.youthero.categories.Category
 import com.example.youthero.categories.MenuCategories
 import com.example.youthero.details.Details
@@ -26,8 +29,11 @@ class MainActivity : ComponentActivity() {
                 Category("Spatii pentru tineri", R.drawable.spatii_tineri)
             )
             YoutheroTheme {
-                //MenuCategories(listCategories)
-                Details()
+                val navController = rememberNavController()
+                NavHost(navController = navController, startDestination = "categories"){
+                    composable("categories") { MenuCategories(listCategories) }
+                    composable("details") { Details() }
+                }
             }
         }
     }
