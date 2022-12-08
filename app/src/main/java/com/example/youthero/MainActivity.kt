@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.youthero.categories.Category
 import com.example.youthero.categories.MenuCategories
+import com.example.youthero.details.Details
 import com.example.youthero.ui.theme.YoutheroTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,7 +26,8 @@ class MainActivity : ComponentActivity() {
                 Category("Spatii pentru tineri", R.drawable.spatii_tineri)
             )
             YoutheroTheme {
-                MenuCategories(listCategories)
+                //MenuCategories(listCategories)
+                Details()
             }
         }
     }
