@@ -6,7 +6,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.youthero.ui.theme.YoutheroTheme
 
 @Composable
-fun Details(){
+fun Details() {
     YoutheroTheme {
         Text(text = "The other view")
     }
@@ -16,6 +16,6 @@ fun Details(){
     showBackground = true
 )
 @Composable
-fun Preview(){
+fun Preview() {
     Details()
 }
