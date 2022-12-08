@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     composable("categories") { MenuCategories(listCategories, navController) }
                     composable(
                         "details/{category}",
-                        arguments = listOf(navArgument("category"){
+                        arguments = listOf(navArgument("category") {
                             type = NavType.StringType
                         })
                     ) {
@@ -43,30 +43,4 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
-    /*
-    @Preview(
-        uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true, name = "Dark Mode"
-    )
-    @Composable
-    fun Preview() {
-        val listCategories: List<Category> = listOf(
-            Category("Educatie", R.drawable.educatie),
-            Category("Cultura", R.drawable.cultura),
-            Category("Ocupatie", R.drawable.ocupatie),
-            Category("Mediu inconjurator", R.drawable.mediu_inconjurator),
-            Category("Viata sanatoasa", R.drawable.viata_sanatoasa),
-            Category("Drepturile Tinerilor", R.drawable.drepturi_tineri),
-            Category("Participare", R.drawable.participare),
-            Category("Spatii pentru tineri", R.drawable.spatii_tineri)
-        )
-        YoutheroTheme {
-            val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = "categories") {
-                composable("categories") { MenuCategories(listCategories, navController) }
-                composable("details") { Details() }
-            }
-        }
-    }
-    */
 }
