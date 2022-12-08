@@ -25,7 +25,7 @@ fun Navigation() {
     uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true, name = "Dark Mode"
 )
 @Composable
-fun Preview(){
+fun Preview() {
     val listCategories: List<Category> = listOf(
         Category("Educatie", R.drawable.educatie),
     )

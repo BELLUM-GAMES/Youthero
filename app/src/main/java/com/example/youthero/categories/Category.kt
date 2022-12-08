@@ -1,6 +1,5 @@
 package com.example.youthero.categories
 
-import android.content.res.Configuration
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -18,10 +17,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
-import com.example.youthero.R
-import com.example.youthero.ui.theme.YoutheroTheme
 
 data class Category(val categoryTitle: String, @DrawableRes val categoryImageID: Int)
 
