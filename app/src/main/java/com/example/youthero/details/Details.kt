@@ -12,7 +12,7 @@ fun Details(navController: NavController) {
     YoutheroTheme {
         Column {
             Button(onClick = {
-                navController.navigate("categories")
+                //navController.navigate("categories")
             }) {
                 Text(text = "Another View, press me to go back")
             }

@@ -27,7 +27,7 @@ fun CategoryItem(categoryItem: Category, navController: NavController) {//Cell =
     Column(
         modifier = Modifier
             .clickable {
-                navController.navigate("details")
+                navController.navigate("details/{category}")
             }
             .padding(start = 16.dp, top = 8.dp, end = 10.5.dp, bottom = 8.dp)
             .clip(shape = RoundedCornerShape(20.dp))

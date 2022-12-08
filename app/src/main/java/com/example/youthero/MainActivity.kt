@@ -1,14 +1,13 @@
 package com.example.youthero
 
-import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.youthero.categories.Category
 import com.example.youthero.categories.MenuCategories
 import com.example.youthero.details.Details
@@ -32,7 +31,14 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "categories") {
                     composable("categories") { MenuCategories(listCategories, navController) }
-                    composable("details") { Details(navController) }
+                    composable(
+                        "details/{category}",
+                        arguments = listOf(navArgument("category"){
+                            type = NavType.StringType
+                        })
+                    ) {
+                        Details(navController)
+                    }
                 }
             }
         }
