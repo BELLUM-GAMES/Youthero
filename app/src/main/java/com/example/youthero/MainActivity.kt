@@ -32,12 +32,13 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "categories") {
                     composable("categories") { MenuCategories(listCategories, navController) }
-                    composable("details") { Details() }
+                    composable("details") { Details(navController) }
                 }
             }
         }
     }
 
+    /*
     @Preview(
         uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true, name = "Dark Mode"
     )
@@ -61,4 +62,5 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+    */
 }
