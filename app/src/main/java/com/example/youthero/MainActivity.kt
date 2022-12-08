@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
             YoutheroTheme {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "categories"){
-                    composable("categories") { MenuCategories(listCategories) }
+                    composable("categories") { MenuCategories(listCategories, navController) }
                     composable("details") { Details() }
                 }
             }
@@ -54,7 +54,11 @@ class MainActivity : ComponentActivity() {
             Category("Spatii pentru tineri", R.drawable.spatii_tineri)
         )
         YoutheroTheme {
-            MenuCategories(listCategories)
+            val navController = rememberNavController()
+            NavHost(navController = navController, startDestination = "categories"){
+                composable("categories") { MenuCategories(listCategories, navController) }
+                composable("details") { Details() }
+            }
         }
     }
 }

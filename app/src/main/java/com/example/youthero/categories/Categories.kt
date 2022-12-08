@@ -20,15 +20,16 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.*
+import androidx.navigation.NavController
 
 data class Category(val categoryTitle: String, @DrawableRes val categoryImageID: Int)
 
 @Composable
-fun CategoryItem(categoryItem: Category) {//Cell == Big column
+fun CategoryItem(categoryItem: Category, navController: NavController) {//Cell == Big column
     Column(
         modifier = Modifier
             .clickable{
-                //onClick
+                navController.navigate("details")
             }
             .padding(start = 16.dp, top = 8.dp, end = 10.5.dp, bottom = 8.dp)
             .clip(shape = RoundedCornerShape(20.dp))
@@ -64,13 +65,13 @@ fun CategoryItem(categoryItem: Category) {//Cell == Big column
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MenuCategories(listCategories: List<Category>) {
+fun MenuCategories(listCategories: List<Category>, navController: NavController) {
     LazyVerticalGrid(
         modifier = Modifier
             .background(Color(0x001E1E1E)),
         cells = GridCells.Fixed(2),
         content = {
-            listCategories.map { item { CategoryItem(it) } }
+            listCategories.map { item { CategoryItem(it, navController) } }
         }
     )
 }
