@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
             )
             YoutheroTheme {
                 MenuCategories(listCategories)
-                //Ce va urma...
+                //Init commit
             }
         }
     }
