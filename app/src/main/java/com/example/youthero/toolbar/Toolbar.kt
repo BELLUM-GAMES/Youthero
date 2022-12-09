@@ -88,6 +88,7 @@ fun MenuCategories(listCategories: List<Category>) {
 fun Preview() {
     val listCategories: List<Category> = listOf(
         Category("Educatie", R.drawable.educatie),
+        Category("Educatie", R.drawable.educatie)
     )
     YoutheroTheme {
         Toolbar()
