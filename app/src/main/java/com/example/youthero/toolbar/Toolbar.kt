@@ -1,7 +1,5 @@
 package com.example.youthero.toolbar
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavType
@@ -15,12 +13,8 @@ import com.example.youthero.categories.MenuCategories
 import com.example.youthero.ui.theme.YoutheroTheme
 
 @Composable
-fun Details(categoryTitle: String?) {
-    YoutheroTheme {
-        Column {
-            Text("This is $categoryTitle layout")
-        }
-    }
+fun Toolbar() {
+
 }
 
 @Preview(showBackground = true)
