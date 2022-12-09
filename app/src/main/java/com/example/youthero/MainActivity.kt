@@ -18,14 +18,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val listCategories: List<Category> = listOf(
-                Category("Educatie", R.drawable.educatie),
-                Category("Cultura", R.drawable.cultura),
-                Category("Ocupatie", R.drawable.ocupatie),
-                Category("Mediu inconjurator", R.drawable.mediu_inconjurator),
-                Category("Viata sanatoasa", R.drawable.viata_sanatoasa),
-                Category("Drepturile Tinerilor", R.drawable.drepturi_tineri),
-                Category("Participare", R.drawable.participare),
-                Category("Spatii pentru tineri", R.drawable.spatii_tineri)
+                Category(getString(R.string.education), R.drawable.educatie),
+                Category(getString(R.string.culture), R.drawable.cultura),
+                Category(getString(R.string.job), R.drawable.ocupatie),
+                Category(getString(R.string.enviroment), R.drawable.mediu_inconjurator),
+                Category(getString(R.string.healthy), R.drawable.viata_sanatoasa),
+                Category(getString(R.string.rights), R.drawable.drepturi_tineri),
+                Category(getString(R.string.participation), R.drawable.participare),
+                Category(getString(R.string.spaces), R.drawable.spatii_tineri)
             )
             YoutheroTheme {
                 val navController = rememberNavController()
