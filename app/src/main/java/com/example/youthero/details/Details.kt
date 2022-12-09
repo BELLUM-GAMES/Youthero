@@ -1,20 +1,16 @@
 package com.example.youthero.details
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import com.example.youthero.ui.theme.YoutheroTheme
 
 @Composable
-fun Details(navController: NavController) {
+fun Details(categoryTitle: String?) {
     YoutheroTheme {
         Column {
-            Button(onClick = {
-                //navController.navigate("categories")
-            }) {
-                Text(text = "Another View, press me to go back")
+            Column {
+                Text("This is $categoryTitle, press me to go back")
             }
         }
     }

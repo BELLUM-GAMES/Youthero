@@ -32,12 +32,12 @@ class MainActivity : ComponentActivity() {
                 NavHost(navController = navController, startDestination = "categories") {
                     composable("categories") { MenuCategories(listCategories, navController) }
                     composable(
-                        "details/{category}",
-                        arguments = listOf(navArgument("category") {
+                        "details/{categoryTitle}",
+                        arguments = listOf(navArgument("categoryTitle") {
                             type = NavType.StringType
                         })
-                    ) {
-                        Details(navController)
+                    ) { navBackStackEntry ->
+                        Details(navBackStackEntry.arguments?.getString("categoryTitle"))
                     }
                 }
             }
