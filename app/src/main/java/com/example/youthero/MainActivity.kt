@@ -36,8 +36,8 @@ class MainActivity : ComponentActivity() {
                         arguments = listOf(navArgument("categoryTitle") {
                             type = NavType.StringType
                         })
-                    ) { navBackStackEntry ->
-                        Details(navBackStackEntry.arguments?.getString("categoryTitle"))
+                    ) {
+                        Details(it.arguments?.getString("categoryTitle"))
                     }
                 }
             }

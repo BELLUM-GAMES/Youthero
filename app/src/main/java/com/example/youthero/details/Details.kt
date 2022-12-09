@@ -9,9 +9,7 @@ import com.example.youthero.ui.theme.YoutheroTheme
 fun Details(categoryTitle: String?) {
     YoutheroTheme {
         Column {
-            Column {
-                Text("This is $categoryTitle, press me to go back")
-            }
+            Text("This is $categoryTitle layout")
         }
     }
 }

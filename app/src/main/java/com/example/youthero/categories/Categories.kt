@@ -55,8 +55,8 @@ fun CategoryItem(categoryItem: Category, navController: NavController) {//Cell =
             color = Color(0xFF6A6A6A), //dirty gray
             fontStyle = FontStyle(0), //normal
             fontWeight = FontWeight(600), //weight
-            fontFamily = FontFamily.SansSerif, //SP nush
-            lineHeight = 16.sp
+            fontFamily = FontFamily.SansSerif, //SP font but isn't SP
+            lineHeight = 16.sp //lineHeight
         )
     }
 }
