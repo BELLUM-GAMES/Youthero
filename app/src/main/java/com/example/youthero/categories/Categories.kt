@@ -69,7 +69,7 @@ fun MenuCategories(listCategories: List<Category>, navController: NavController)
             .background(Color(0x001E1E1E)),
         cells = GridCells.Fixed(2),
         content = {
-            listCategories.map { item { CategoryItem(it, navController) } }
+            listCategories.map { item { CategoryItem(categoryItem = it, navController = navController) } }
         }
     )
 }

@@ -30,14 +30,14 @@ class MainActivity : ComponentActivity() {
             YoutheroTheme {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "categories") {
-                    composable("categories") { MenuCategories(listCategories, navController) }
+                    composable("categories") { MenuCategories(listCategories = listCategories, navController = navController) }
                     composable(
                         "details/{categoryTitle}",
                         arguments = listOf(navArgument("categoryTitle") {
                             type = NavType.StringType
                         })
                     ) {
-                        Details(it.arguments?.getString("categoryTitle"))
+                        Details(categoryTitle = it.arguments?.getString("categoryTitle"))
                     }
                 }
             }
