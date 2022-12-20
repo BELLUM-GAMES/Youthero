@@ -3,8 +3,14 @@ package com.example.youthero
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.youthero.categories.Category
 import com.example.youthero.categories.MenuCategories
+import com.example.youthero.details.Details
 import com.example.youthero.ui.theme.YoutheroTheme
 
 class MainActivity : ComponentActivity() {
@@ -12,18 +18,28 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val listCategories: List<Category> = listOf(
-                Category("Educatie", R.drawable.educatie),
-                Category("Cultura", R.drawable.cultura),
-                Category("Ocupatie", R.drawable.ocupatie),
-                Category("Mediu inconjurator", R.drawable.mediu_inconjurator),
-                Category("Viata sanatoasa", R.drawable.viata_sanatoasa),
-                Category("Drepturile Tinerilor", R.drawable.drepturi_tineri),
-                Category("Participare", R.drawable.participare),
-                Category("Spatii pentru tineri", R.drawable.spatii_tineri)
+                Category(getString(R.string.education), R.drawable.educatie),
+                Category(getString(R.string.culture), R.drawable.cultura),
+                Category(getString(R.string.job), R.drawable.ocupatie),
+                Category(getString(R.string.enviroment), R.drawable.mediu_inconjurator),
+                Category(getString(R.string.healthy), R.drawable.viata_sanatoasa),
+                Category(getString(R.string.rights), R.drawable.drepturi_tineri),
+                Category(getString(R.string.participation), R.drawable.participare),
+                Category(getString(R.string.spaces), R.drawable.spatii_tineri)
             )
             YoutheroTheme {
-                MenuCategories(listCategories)
-                //Ce va urma...
+                val navController = rememberNavController()
+                NavHost(navController = navController, startDestination = "categories") {
+                    composable("categories") { MenuCategories(listCategories = listCategories, navController = navController) }
+                    composable(
+                        "details/{categoryTitle}",
+                        arguments = listOf(navArgument("categoryTitle") {
+                            type = NavType.StringType
+                        })
+                    ) {
+                        Details(categoryTitle = it.arguments?.getString("categoryTitle"))
+                    }
+                }
             }
         }
     }

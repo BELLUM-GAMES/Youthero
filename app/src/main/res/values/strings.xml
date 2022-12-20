@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Youthero</string>
+    <string name="education">Educatie</string>
+    <string name="culture">Cultura</string>
+    <string name="job">Ocupatie</string>
+    <string name="enviroment">Mediu inconjurator</string>
+    <string name="healthy">Viata sanatoasa</string>
+    <string name="rights">Drepturile Tinerilor</string>
+    <string name="participation">Participare</string>
+    <string name="spaces">Spatii pentru tineri</string>
 </resources>
